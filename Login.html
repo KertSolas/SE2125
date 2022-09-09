@@ -1,0 +1,30 @@
+<html>
+    <body>
+
+        <form>
+            <label>Username:</label><br> <!--label for username -->
+            <input id = "username" placeholder="Username"><br> <!--Used id attribute in order to call it in js later and placeholder for the light grey thingy in th input bar-->
+            <label>Password:</label><br> <!--label for password -->
+            <input id = "password" placeholder="Password"><br><br> <!--similar explanation to username above -->
+            <input id= "login" type="button" onclick="success()"> <!--Used the type = button in order to make it a button and on click the success function will be called-->
+        </form>
+        <script>
+            let loginButton = document.getElementById("login") // getting the id of the login, username, and password
+            let username = document.getElementById("username")
+            let password = document.getElementById("password")
+            loginButton.disabled = true; // so that the user could not click the button
+            username.addEventListener("change", check);// checks if there is a change in the input field
+            password.addEventListener("change", check);
+            function success () { //an alert when logging in
+                alert("Logged In!")
+            }
+            function check() { // check if the input field is empty
+	            if(document.getElementById("username").value === "" && document.getElementById("password").value === "") { 
+                     document.getElementById('login').disabled = true; // if empty login button is disabled
+                } else { 
+                    document.getElementById('login').disabled = false; // if not empty login button is enabled
+                }
+            }
+        </script>
+    </body>
+</html>
