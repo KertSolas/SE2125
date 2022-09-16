@@ -1,0 +1,50 @@
+<html>
+    <body>
+        <style>
+            .username {
+              background-color: #d0ebf7;
+              border-color: #4287f5;
+              border-radius: 5px;
+              font-size: medium; 
+              padding: 5px;
+            }
+            .password {
+              background-color: #d0ebf7;
+              border-color: #4287f5;
+              border-radius: 5px;
+              font-size: medium; 
+              padding: 5px;
+            }
+            .loginButton {
+              background-color: #d0ebf7;
+              border-color: #4287f5;
+              border-radius: 5px;
+              width: 150px;
+              height: 30px;
+              padding: 5px;
+            }
+        </style>
+        <form>
+            <label>Username:</label><br> <!--label for username -->
+            <input class = "username" placeholder="Username"><br> <!--Used id attribute in order to call it in js later and placeholder for the light grey thingy in th input bar-->
+            <label>Password:</label><br> <!--label for password -->
+            <input class = "password" type = "password" placeholder="Password"><br><br> <!--similar explanation to username above -->
+            <button class="loginButton" onclick="success()">Login</button><!--Used the type = button in order to make it a button and on click the success function will be called-->
+        </form>
+        <script>
+            let loginButton = document.querySelector(".loginButton") // getting the class of the login, username, and password
+            let username = document.querySelector(".username")
+            let password = document.querySelector(".password")
+
+            function success () { //an alert when logging in
+              if (username.value === "" || password.value === "") {
+                alert ("USERNAME OR PASSWORD IS BLANK")
+              } else if (username.value.length <= 3 || password.value.length <= 3) {
+                alert ("USERNAME OR PASSWORD SHOULD BE MORE THAN 3 CHARACTERS")
+              } else if (username.value === "admin" && password.value === "root") {
+                window.open('home.html')
+              }
+            }
+        </script>
+    </body>
+</html>
